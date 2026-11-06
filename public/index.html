@@ -1,0 +1,58 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Crawl Price Board — public AI crawler access signals</title>
+<meta name="description" content="Search what well-known sites publish about AI crawler access: robots.txt rules, llms.txt, and HTTP 402 / crawler-price headers. Free board + JSON API for agents.">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Crawl Price Board","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Person","name":"Nathan Petty","email":"nathan@nathanpetty.com","address":{"@type":"PostalAddress","streetAddress":"791 Jensen Court","addressLocality":"Encinitas","addressRegion":"CA","postalCode":"92024","addressCountry":"US"}}}</script>
+</head><body><div class="wrap">
+<header>
+  <a class="brand" href="/" style="color:#111;text-decoration:none">Crawl Price Board</a>
+  <nav>
+    <a href="/#api">API</a>
+    <a href="/#pricing">Paid API</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="mailto:nathan@nathanpetty.com">Contact</a>
+  </nav>
+</header>
+<div class="banner"><b>Research board.</b> We only read public <code>/robots.txt</code>, <code>/llms.txt</code>, and the site root with an honest research user-agent. Automated estimates — verify on the source. See <a href="/terms">disclaimer</a>.</div>
+<h1>What do sites charge — or block — for AI crawlers?</h1>
+<p class="lead">A searchable board of public crawler-access signals. Built for people and for agents (JSON + tool discovery). Freshness history is the moat: we keep dated snapshots, not one-shot screenshots.</p>
+<div class="stats" id="stats"></div>
+<p class="muted" id="generated"></p>
+<div class="search">
+  <input id="q" type="search" placeholder="Search domain (e.g. nytimes)" aria-label="Search domains">
+  <select id="signal" aria-label="Filter by signal">
+    <option value="">All signals</option>
+    <option value="robots-blocks-ai">robots blocks AI</option>
+    <option value="llms-txt">llms.txt present</option>
+    <option value="http-402-or-crawler-price">HTTP 402 / crawler-price</option>
+    <option value="cloudflare">Cloudflare server</option>
+    <option value="access-denied">access denied</option>
+  </select>
+  <button id="go" type="button">Search</button>
+</div>
+<p class="muted" id="meta"></p>
+<div class="card" style="overflow:auto">
+<table id="board"><thead><tr><th>Domain</th><th>robots.txt AI rules</th><th>llms.txt</th><th>Root</th><th>Signals</th></tr></thead><tbody></tbody></table>
+</div>
+<section class="card" id="api"><h2 style="margin-top:0">JSON API for agents</h2>
+<p>Free endpoints (no key):</p>
+<ul>
+<li><code>GET /api/search?q=&amp;signal=&amp;limit=</code></li>
+<li><code>GET /api/domain?domain=example.com</code></li>
+<li><code>GET /api/history</code> and <code>GET /api/history?date=YYYY-MM-DD</code></li>
+<li><code>GET /api/v1?path=tools</code> — machine-readable tool list (MCP-shaped discovery)</li>
+<li><code>GET /api/v1?path=stats</code></li>
+</ul>
+<p class="muted">User-Agent of our probes: CrawlPriceBoardBot/0.1 — contact nathan@nathanpetty.com.</p>
+</section>
+<section class="card" id="pricing"><h2 style="margin-top:0">Paid API / alerts (placeholder)</h2>
+<p><b>$29/mo planned</b> for API keys, higher rate limits, and email alerts when a watched domain’s robots or 402 signal changes.</p>
+<p class="muted">Stripe checkout is not wired in this environment (connector needs auth). No charges can be taken yet. Email <a href="mailto:nathan@nathanpetty.com?subject=Crawl%20Price%20Board%20API">nathan@nathanpetty.com</a> to enable Stripe-hosted checkout. We never see card numbers.</p>
+</section>
+<footer>
+Crawl Price Board is an independent research tool operated by Nathan Petty, 791 Jensen Court, Encinitas, CA 92024 · <a href="mailto:nathan@nathanpetty.com">nathan@nathanpetty.com</a><br>
+<a href="/privacy">Privacy</a> · <a href="/terms">Terms &amp; disclaimer</a> · <a href="mailto:nathan@nathanpetty.com?subject=Crawl%20Price%20Board">Contact</a><br>
+Not affiliated with, endorsed by, or sponsored by Cloudflare, OpenAI, Anthropic, Google, xAI, Perplexity, or any site listed on this board. Product and company names identify public signals only. No cookies, no ad trackers, no analytics.
+</footer>
+</div><script src="/app.js"></script></body></html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://crawl-price-board.vercel.app/sitemap.xml

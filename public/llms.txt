@@ -1,0 +1,11 @@
+# Crawl Price Board
+> Public board of AI crawler access signals (robots.txt, llms.txt, HTTP 402 / crawler-price).
+
+## API
+- /api/search
+- /api/domain
+- /api/history
+- /api/v1?path=tools
+
+## Contact
+nathan@nathanpetty.com

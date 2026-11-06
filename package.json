@@ -1,0 +1,9 @@
+{
+  "name": "crawl-price-board",
+  "private": true,
+  "version": "0.1.0",
+  "engines": { "node": "22.x" },
+  "scripts": {
+    "seed": "node scripts/seed.js"
+  }
+}
